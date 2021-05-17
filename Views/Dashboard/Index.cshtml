@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<h1>Your Balance is: Rs. @ViewBag.AccountBalance</h1>
+<hr />
+
+<button type="button" onclick="location.href='@Url.Action("Deposit", "Dashboard")'">
+    Deposit
+</button>
+<button type="button" onclick="location.href='@Url.Action("Transfer", "Dashboard")'">
+    Transfer
+</button>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
